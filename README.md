@@ -8,7 +8,7 @@ Implementation of some laser scan matching algorithms and a program to compare a
 This repository contains source code that I wrote while researching scan matching algorithms, mainly in the period from 2004-2009.
 The code of the *mbicp* algorithm was available (Here you will find a patched version). All the other code was written by myself using the description available in published articles as reference.
 
-The command line program for batch testing the scan matching algorithms is called sm_cli. Read the QUICKSTART file for usage instructions.
+The command line program for batch testing the scan matching algorithms is called sm_cli (t.cpp). Read the QUICKSTART file for usage instructions.
 
 Example scans, both real and simulated are also provided.
 
