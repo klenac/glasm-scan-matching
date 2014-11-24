@@ -1,3 +1,24 @@
+# eclipse project settings
+*.project
+*.cproject
+*.settings/*
+
+# relese and debug folders
+Debug/*
+Release/*
+
+# variable data
+images/*
+scans/*
+experiments/*
+errvsiter.csv
+
+# temporary files
+*.orig
+gmon.out
+tmp/*
+
+
 # Compiled Object files
 *.slo
 *.lo

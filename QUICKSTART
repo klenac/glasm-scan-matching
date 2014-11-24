@@ -1,0 +1,163 @@
+QUICKSTART - Using sm_cli
+=========================
+
+Batch testing of multiple scan matching algorithms from command line.
+
+The results are printed to screen and optionaly PNG images are produced.
+
+
+Setting up a development environment with Eclipse
+-------------------------------------------------
+
+Install Eclipse, CDT, ecc...
+
+Install required libraries.
+
+In particular libpngwriter libraries may be installed manually with:
+sudo dpkg -i libpngwriter0c2_0.5.3-3_amd64.deb
+sudo dpkg -i libpngwriter0-dev_0.5.3-3_amd64.deb
+They are provided in the lib folder.
+
+a) importing existing project
+
+The directory (sm_cli) where you cloned the repository contains .project file which can be imported in eclipse.
+
+With Ecilpse indigo: File-> Import -> General -> Existing  project -> go to sm_cli folder -> Ok
+
+I dont know if backward compatibility is presereved. (Importing in Eclipse galileo a project from Indigo)
+
+b) new project
+
+Create new C++ project
+
+Add the following libraries
+
+png 
+boost_program_options
+png writer
+m
+z
+freetype
+
+Set a path for the libraries (in my case /usr/lib)
+Set directories for the includes (I had to add /usr/include/freetype2)
+
+Optional: after the first build, set the exe to launch in Run configurations
+
+
+
+QUICKSTART
+----------
+
+1. set up all the options in ./experiments/current/sm.ini
+
+2. for each chosen algorithm set further options in his *.ini file (filename is set in sm.ini)
+
+3. Run t.cpp
+
+
+Observe the output on stdout (Console if run from eclipse) and look for images in ./images folder.
+
+
+
+EXPERIMENTS
+------------
+
+Typical steps for a new set of tests:
+
+1. copy, backup, archive or delete contents already present in the experiments/current folder
+2. copy, backup, archive or delete contents already present in the scans folder
+3. prepare the scans to use in scans folder
+The scans must be in proper format (see source code or better open directly an existing scan in text editor)
+The scan.pos (x,y,z) holds the true position from which the scan was taken (ground truth) while scan readings hold the readings sorted with increasing angle.
+Ground truth position is necessary for some types of experiments, but not for all.
+4. set up all the options in ./experiments/current/sm.ini
+Look at existing examples and source code for reference
+5. for each chosen algorithm set further options in his *.ini file (filename is set in sm.ini)
+Look at existing examples and source code for reference
+6. Remove images in images folder
+
+7. Perform the tests
+
+8. write a readme file explaining the experiments and annotate the changeset / revision of the program used to perform them.
+
+9. once finished, save all the following files in zip file:
+
+readme
+*.ini files
+scans
+results
+images (optional)
+
+and others if necessary to reproduce the experiments.
+
+
+
+DRAWING
+-------
+
+- to enable drawing project (ie simulation wide) enable DRAW_PNG in "simulation.h"
+this way we avoid compiling and linking drawing code when DRAW_PNG is not enabled.
+
+When adding new code in project, include "simulation.h" to get DRAW_PNG preference
+and encircle drawing code with #ifdef DRAW_PNG to include it only if necessary
+
+
+
+
+TYPE OF EXPERIMENTS
+-------------------
+
+core:
+
+ref frame <=> global pose from which scan readings were made (more precisely position of sensors' local ref frame origin)
+
+Inputs to algorithms:
+
+Different SM algorithms expect the scans to be in different formats
+
+scan.pos
+scan.readings
+
+input:  
+    - pair of scans in same ref frame
+    - pair of scans each in it's own ref frame
+        - both ref frames given
+        - relative displacement of one ref frame to the other given
+        - no ref frame given at all, only readings
+
+
+outputs:
+    - pose (of new scan, after matching)
+    - displacement (motion estimation)
+
+    - multiple hypothesis
+        - likelyhood of each (covariance matrix?)
+
+        
+Formats:
+<todo>        
+
+
+
+SIMULATION
+----------
+
+sm main program:
+
+- reads ref and new scan
+-- scans are on disk: readings + true position from where they were taken
+-- different ways exist to pick ref and new scan (see source)
+
+- [optional] applies fake error
+-- can be applied to readings or to initial position estimate
+--- some algorithms (mbicp?_ do not take initial position estimate as input. For them both ref and new scans are already matched if we do not aply fake error to readings.
+
+- [optional] changes ref frame  (keeping the relative order of readings)
+-- some algorithms (mbicp?) consider both scans in same ref frame and output their relative displacement after matching
+--- this reference frame must be (0,0,0)
+
+- [optional] resamples, filters or other preprocessing on scans
+
+
+- finaly the two scans are served as input to various algorithms

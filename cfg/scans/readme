@@ -1,0 +1,2 @@
+see also real scans from rawseeds project.
+My project rawseeds2scan contains both scripts to extract scans from rawseed data and scans already extracted in the format used in sm_cli (command line program for batch testing of multiple scan matching algorithms)

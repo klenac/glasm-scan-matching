@@ -1,0 +1,58 @@
+# Desc: Player sample configuration file for controlling Stage devices
+# Author:  Kristijan Lenac
+# Date: 30 June 2010
+
+
+include "pioneer.inc"                           # defines Pioneer-like robots
+include "map.inc"                               # defines 'map' object used for floorplans
+include "sick.inc"                              # defines sick laser scanner
+
+resolution 0.02
+interval_sim 100
+
+window
+( 
+  size [ 800.000 576.000 ] 
+  center [-0.010 -0.040] 
+  scale 30.000 
+)
+
+floorplan
+( 
+  bitmap "bitmaps/cave.png"
+  size [16.000 16.000 0.800]
+  name "cave"
+  pose [0 0 0 0]
+)
+
+#pioneer2dx
+#(		  
+#  name "robot0"
+#  pose [ 0 0 0 0 ] 
+#  sicklaser(   
+#     # ctrl "lasernoise"  # uncomment this line to run a laser noise generator
+#  )
+# 
+#  #ctrl "wander"
+
+#  # report error-free position in world coordinates
+#  localization "gps"
+#  localization_origin [ 0 0 0 0 ]
+#  
+#  color "black"
+#)
+
+pioneer2dx
+(		  
+  name "robot1"
+  pose [ -7 -7 0 45 ] 
+  sicklaser(   
+     # ctrl "lasernoise"  # uncomment this line to run a laser noise generator
+  )
+ 
+  ctrl "wander"
+
+  # report position with odometry errors
+  localization "gps"
+  localization_origin [ 0 0 0 0 ]
+)

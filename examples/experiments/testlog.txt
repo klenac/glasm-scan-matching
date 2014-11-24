@@ -1,0 +1,133 @@
+Test log
+========
+
+Log entry:
+	Date:
+	Test objective:
+	Test description:
+	Algorithms, parameters and data used:
+	Test results:
+	Comments:
+
+
+
+
+20110427
+
+Test objective: compare GLASM_DI and GLASM_ME
+- test computation time and accuracy: GLASM_ME
+- test computation time and accuracy: GLASM_DI
+same genetic parameters, environment, scans
+
+
+Test1 - sm.ini:
+[general]
+scan_path                       = ./scans/
+scan_basename                   = scan
+#ref_scan                        = sequence
+ref_scan                       = 10
+#new_scan                        = offset
+new_scan                       = 12
+new_scan_offset                 = 0
+loop_start                      = 1
+loop_end                        = 1
+runs                            = 1
+skip_first_runs                 = 0
+draw_scans                      = false
+image_resolution                = medium
+min_scan_readings               = 40
+resample_scans                  = false
+resample_distance               = 0.03
+median_filter_scans             = false
+median_filter_order             = 3
+median_filter_distance          = 0.06
+ref_scan_odd_readings_only      = true
+ref_scan_even_readings_only     = false
+new_scan_odd_readings_only      = false
+new_scan_even_readings_only     = true
+maxFakeErrorX                   = 2.00
+maxFakeErrorY                   = 2.00
+maxFakeErrorRot                 = 6.28318531
+fakeError                      = fixed
+success_treshold_traslation     = 0.05
+success_treshold_rotation       = 0.05
+
+[glasm_me]
+enabled                         = true
+NumBitGeneX                     = 8
+NumBitGeneY                     = 8
+NumBitGeneRot                   = 8
+PopSize                         = 500
+MaxRuns                         = 3
+MaxGene                         = 10
+PCross                          = 1
+PMutation                       = 0.012
+RisulArea                       = 3000
+SearchAreaDist                  = 3.0
+SearchAreaRot                   = 6.283185
+
+[glasm_di]
+enabled                         = true
+RGmean                          = 0.0 
+RGvariance                      = 0.2
+RGweight                        = 100
+RGscale                         = 1000.0
+RGbitmapsize                    = 0.5
+NumBitGeneX                     = 8
+NumBitGeneY                     = 8
+NumBitGeneRot                   = 8
+PopSize                         = 500
+MaxRuns                         = 3
+MaxGene                         = 10
+PCross                          = 1
+PMutation                       = 0.012
+RisulArea                       = 3000
+SearchAreaDist                  = 3.0
+SearchAreaRot                   = 6.283185
+
+
+
+20110503 - pomeriggio 17:18
+
+Adesso lancio un paio di prove per i tempi di calcolo per 2 casi: random error up to 0.20m, 0.20m, 17.3o
+e 2.00m, 2.00m, 360.0o
+GLASM search space size: 
+NumBitGeneX                     = 8
+NumBitGeneY                     = 8
+NumBitGeneRot                   = 8
+PopSize                         = 50
+MaxRuns                         = 1
+MaxGene                         = 10
+PCross                          = 1
+PMutation                       = 0.12
+RisulArea                       = 3000
+SearchAreaDist                  = 0.3
+SearchAreaRot                   = 0.7
+
+# default values for [mbicp] as in player and original documentation
+max_laser_range= 7.9
+Bw= 0.5233333
+Br= 0.3
+L= 3.0
+laserStep= 1
+MaxDistInter= 0.5
+filter= 0.95
+ProjectionFilter= 1  # keep this disabled (0) to avoid problems in some cases ...
+AsocError= 0.1 
+MaxIter= 50 # in the article MbICP-TRO they use 500, in player the default is 50
+errorRatio= 0.0001
+errx_out= 0.0001
+erry_out= 0.0001
+errt_out= 0.0001
+IterSmoothConv= 2
+
+
+
+algorithm mbicp: res(-1.47147e-05,9.16271e-06,-6.3456e-06) : computation time (microseconds): 503322
+algorithm glasm_me: res(-0.022435,-0.0357295,6.28152) : computation time (microseconds): 25460
+algorithm glasm_mbicp: res(2.11889e-05,-1.25571e-05,9.29061e-06) : computation time (microseconds): 424569
+
+
+
+
+
