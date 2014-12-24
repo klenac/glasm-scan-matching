@@ -1,34 +1,90 @@
-QUICKSTART - Using sm_cli
-=========================
+QUICKSTART
+==========
 
-Batch testing of multiple scan matching algorithms from command line.
+Contents
+--------
 
+1. Introduction
+2. Contents of the repository
+3. Setting up a development environment with Eclipse
+4. Building the sm_cli program
+5. Preparing for the experiments
+6. Running the tests
+7. Analysing the results
+
+
+Introduction
+------------
+
+The program sm_cli allows to batch test multiple scan matching algorithms from command line.
 The results are printed to screen and optionaly PNG images are produced.
+
+
+Contents of the repository
+--------------------------
+
+cfg/        - <todo: remove> optional configuration for playerstage simulated environments. Ignore if not using playerstage.
+devdoc/fig  - <todo: remove>
+examples/   - example scans and configurations
+lib/        - libpngwriter library copied here for convenience since it is not included anymore in ubuntu repository
+sm_cli.cpp - source code for sm_cli main program
+launch_sm_cli.sh - optional bash script for batch execution of sm_cli (using different configurations)
+<algorithm>_aux - wrappers for algorithms providing uniform interface to sm_cli
+<algorith>  - algorithm implementations
+utils.cpp - generic utility functions
+
 
 
 Setting up a development environment with Eclipse
 -------------------------------------------------
 
+Quick description
+^^^^^^^^^^^^^^^^^
+
 Install Eclipse, CDT, ecc...
+Install required libraries (png, boost_program_options, png writer, freetype,...).
+Import existing project in eclipse (there is a .project file in the root of the repository)
+... or create a new project. You will need to add required libraries and paths.
+Build and run (you may want to configure the Run configurations in eclipse for that)
 
-Install required libraries.
 
-In particular libpngwriter libraries may be installed manually with:
-sudo dpkg -i libpngwriter0c2_0.5.3-3_amd64.deb
-sudo dpkg -i libpngwriter0-dev_0.5.3-3_amd64.deb
-They are provided in the lib folder.
+Detailed description
+^^^^^^^^^^^^^^^^^^^^
 
-a) importing existing project
+As example we will install everything starting from a clean fresh Ubuntu 14.04.1 virtual machine. After the installation open the terminal window (Ctrl+Alt+T).
 
-The directory (sm_cli) where you cloned the repository contains .project file which can be imported in eclipse.
+Preliminary step - update system
 
-With Ecilpse indigo: File-> Import -> General -> Existing  project -> go to sm_cli folder -> Ok
+$ sudo apt-get update
+$ sudo apt-get upgrade
 
-I dont know if backward compatibility is presereved. (Importing in Eclipse galileo a project from Indigo)
+Install eclipse with C/C++ development tools
 
-b) new project
+$ sudo apt-get install eclipse-cdt
+$ sudo apt-get install build-essential
 
-Create new C++ project
+Install git
+
+$ sudo apt-get install git
+
+Clone the glasm-scan-matching repository from github
+
+$ git clone https://github.com/klenac/glasm-scan-matching.git
+
+Install required libraries
+
+$ sudo apt-get install boost-program-options-dev libfreetype6-dev
+
+From version Ubuntu 10.10 libpngwriter libraries are not available in the ubuntu repositories. They can be installed manually. Download the last available package for your architecture (http://packages.ubuntu.com/lucid/libpngwriter0-dev) (the packages for amd64 architecture are already included in the lib directory for convenience, so you don't have to download them).
+
+$ sudo dpkg -i libpngwriter0* 
+
+
+Create a new project in eclipse
+
+File->New C++ Project
+Select ...
+<todo>
 
 Add the following libraries
 

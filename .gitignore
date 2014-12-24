@@ -1,3 +1,6 @@
+# system
+.directory
+
 # eclipse project settings
 *.project
 *.cproject
@@ -47,3 +50,4 @@ tmp/*
 *.exe
 *.out
 *.app
+/Debug/
