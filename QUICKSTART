@@ -67,8 +67,9 @@ Install git
 
 $ sudo apt-get install git
 
-Clone the glasm-scan-matching repository from github
+Clone the glasm-scan-matching repository from github in your home folder (you can clone it wherever you want. It will be easier to create the eclipse project if you don't clone it in the eclipse workspace folder.)
 
+$ cd
 $ git clone https://github.com/klenac/glasm-scan-matching.git
 
 Install required libraries
@@ -82,21 +83,38 @@ $ sudo dpkg -i libpngwriter0*
 
 Create a new project in eclipse
 
-File->New C++ Project
-Select ...
-<todo>
+File -> New -> Project -> C++ Project -> Executable -> Empty Project
+Untick "Use default location"
+Select "Linux GCC" as toolchain
+Select the glasm-scan-matching folder cloned from github
+choose a name for your project (glasm-scan-matching is fine)
 
-Add the following libraries
+Click Next
+Click Advanced settings...
 
+In C/C+ +Build:
+Cofiguration: [All configurations]
+Builder type: Internal builder
+
+
+In C/C++ General -> Paths and Symbols
+Cofiguration: [All configurations]
+
+Add the following Includes [to all languages]:
+/usr/include 
+/usr/include/freetype2
+
+Add the following libraries:
 png 
+pngwriter
 boost_program_options
-png writer
 m
-z
 freetype
 
-Set a path for the libraries (in my case /usr/lib)
-Set directories for the includes (I had to add /usr/include/freetype2)
+Add the following library paths:
+/usr/lib/x86_64-linux-gnu/
+/usr/lib
+
 
 Optional: after the first build, set the exe to launch in Run configurations
 
