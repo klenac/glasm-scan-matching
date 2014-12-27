@@ -1,0 +1,567 @@
+LARGE ERROR 2.0, 2.0, 6.283
+===========================
+
+
+300 2 20
+--------
+
+Algorithm: glasm_binary
+successes(837)  failures(163)
+false_positives(0)  true_positives(837)
+false_negatives(0)  true_negatives(163)
+
+Valid pairs: 1000 SuccessRatio(0.837)
+computation time (microseconds) for succesfull matchings average: 89845.1 variance: 1.13087e+08 std dev: 10634.2
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 83397.3 variance: 2.10436e+08 std dev: 14506.4
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.035076,0.00157075) variance(0.000252587,3.12425e-05) std dev(0.015893,0.0055895)
+
+
+Algorithm: glasm_gradient
+successes(990)  failures(10)
+false_positives(0)  true_positives(990)
+false_negatives(0)  true_negatives(10)
+
+Valid pairs: 1000 SuccessRatio(0.99)
+computation time (microseconds) for succesfull matchings average: 86741.6 variance: 1.50496e+08 std dev: 12267.7
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 71664.7 variance: 5.31075e+08 std dev: 23045.1
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0238861,0.00105511) variance(0.000282962,1.73383e-05) std dev(0.0168215,0.00416393)
+
+
+Algorithm: polarga
+successes(940)  failures(60)
+false_positives(0)  true_positives(940)
+false_negatives(0)  true_negatives(60)
+
+Valid pairs: 1000 SuccessRatio(0.94)
+computation time (microseconds) for succesfull matchings average: 121894 variance: 2.5502e+08 std dev: 15969.4
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 138115 variance: 4.78224e+07 std dev: 6915.37
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0047275,0.00259036) variance(0.000258835,0.000121966) std dev(0.0160883,0.0110438)
+
+
+300 3 30
+--------
+
+
+
+Algorithm: glasm_binary
+successes(958)  failures(42)
+false_positives(0)  true_positives(958)
+false_negatives(0)  true_negatives(42)
+
+Valid pairs: 1000 SuccessRatio(0.958)
+computation time (microseconds) for succesfull matchings average: 183684 variance: 5.58172e+08 std dev: 23625.7
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 167881 variance: 6.61073e+08 std dev: 25711.3
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0320921,0.000128288) variance(0.000153496,2.81777e-06) std dev(0.0123893,0.00167862)
+
+
+Algorithm: glasm_gradient
+successes(999)  failures(1)
+false_positives(0)  true_positives(999)
+false_negatives(0)  true_negatives(1)
+
+Valid pairs: 1000 SuccessRatio(0.999)
+computation time (microseconds) for succesfull matchings average: 182916 variance: 5.33143e+08 std dev: 23089.9
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 124782 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00522777,0.000221293) variance(0.000104486,4.18544e-06) std dev(0.0102218,0.00204584)
+
+
+Algorithm: polarga
+successes(973)  failures(27)
+false_positives(0)  true_positives(973)
+false_negatives(0)  true_negatives(27)
+
+Valid pairs: 1000 SuccessRatio(0.973)
+computation time (microseconds) for succesfull matchings average: 270471 variance: 1.22951e+09 std dev: 35064.3
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 305353 variance: 2.11139e+08 std dev: 14530.6
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00328644,0.00159216) variance(0.000171395,7.219e-05) std dev(0.0130918,0.00849647)
+
+
+-- seconda prova (double check)
+
+Algorithm: glasm_binary
+successes(966)  failures(34)
+false_positives(0)  true_positives(966)
+false_negatives(0)  true_negatives(34)
+
+Valid pairs: 1000 SuccessRatio(0.966)
+computation time (microseconds) for succesfull matchings average: 186103 variance: 4.84327e+08 std dev: 22007.4
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 177684 variance: 9.45066e+08 std dev: 30741.9
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0327354,0.000101627) variance(0.000172159,1.54857e-06) std dev(0.0131209,0.00124441)
+
+
+Algorithm: glasm_gradient
+successes(1000)  failures(0)
+false_positives(0)  true_positives(1000)
+false_negatives(0)  true_negatives(0)
+
+Valid pairs: 1000 SuccessRatio(1)
+computation time (microseconds) for succesfull matchings average: 190111 variance: 5.01544e+08 std dev: 22395.2
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 0 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0156085,0.000368145) variance(8.98414e-05,6.18922e-06) std dev(0.00947847,0.00248781)
+
+
+Algorithm: polarga
+successes(976)  failures(24)
+false_positives(0)  true_positives(976)
+false_negatives(0)  true_negatives(24)
+
+Valid pairs: 1000 SuccessRatio(0.976)
+computation time (microseconds) for succesfull matchings average: 270579 variance: 1.22668e+09 std dev: 35024.1
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 303664 variance: 2.53999e+08 std dev: 15937.3
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00365367,0.00135962) variance(0.000184108,3.98526e-05) std dev(0.0135686,0.00631289)
+
+
+200 2 15
+--------
+
+Algorithm: glasm_binary
+successes(655)  failures(345)
+false_positives(0)  true_positives(655)
+false_negatives(0)  true_negatives(345)
+
+Valid pairs: 1000 SuccessRatio(0.655)
+computation time (microseconds) for succesfull matchings average: 47974.3 variance: 2.89215e+07 std dev: 5377.87
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 45071.6 variance: 4.56857e+07 std dev: 6759.12
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0401087,0.00525035) variance(0.000465694,0.000127113) std dev(0.0215799,0.0112744)
+
+
+Algorithm: glasm_gradient
+successes(939)  failures(61)
+false_positives(0)  true_positives(939)
+false_negatives(0)  true_negatives(61)
+
+Valid pairs: 1000 SuccessRatio(0.939)
+computation time (microseconds) for succesfull matchings average: 45201 variance: 4.64529e+07 std dev: 6815.64
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 44937.5 variance: 3.85488e+07 std dev: 6208.76
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0378551,0.00304816) variance(0.000587861,5.47995e-05) std dev(0.0242458,0.00740267)
+
+
+Algorithm: polarga
+successes(874)  failures(126)
+false_positives(0)  true_positives(874)
+false_negatives(0)  true_negatives(126)
+
+Valid pairs: 1000 SuccessRatio(0.874)
+computation time (microseconds) for succesfull matchings average: 61531 variance: 6.52387e+07 std dev: 8077.05
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 69350.7 variance: 1.99214e+07 std dev: 4463.34
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00945835,0.00445104) variance(0.000320415,0.000135311) std dev(0.0179001,0.0116323)
+
+
+
+150 2 10
+--------
+
+Algorithm: glasm_binary
+successes(353)  failures(647)
+false_positives(0)  true_positives(353)
+false_negatives(0)  true_negatives(647)
+
+Valid pairs: 1000 SuccessRatio(0.353)
+computation time (microseconds) for succesfull matchings average: 25961.5 variance: 7.30225e+06 std dev: 2702.27
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 24856.3 variance: 1.43201e+07 std dev: 3784.19
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.049757,0.0144716) variance(0.00067378,0.000285856) std dev(0.0259573,0.0169073)
+
+
+Algorithm: glasm_gradient
+successes(700)  failures(300)
+false_positives(0)  true_positives(700)
+false_negatives(0)  true_negatives(300)
+
+Valid pairs: 1000 SuccessRatio(0.7)
+computation time (microseconds) for succesfull matchings average: 24457.7 variance: 8.4767e+06 std dev: 2911.48
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 24351.6 variance: 1.45715e+07 std dev: 3817.27
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.051925,0.00690121) variance(0.000632546,0.000124743) std dev(0.0251505,0.0111689)
+
+
+Algorithm: polarga
+successes(698)  failures(302)
+false_positives(0)  true_positives(698)
+false_negatives(0)  true_negatives(302)
+
+Valid pairs: 1000 SuccessRatio(0.698)
+computation time (microseconds) for succesfull matchings average: 31514.7 variance: 1.76524e+07 std dev: 4201.48
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 34020.4 variance: 1.30978e+07 std dev: 3619.09
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.029212,0.00772274) variance(0.00074306,0.000137721) std dev(0.0272591,0.0117355)
+
+
+
+
+
+MEDIUM ERROR 0.5,0.5,0.523598776
+================================
+
+
+200 2 15
+--------
+
+Algorithm: glasm_binary
+successes(993)  failures(7)
+false_positives(0)  true_positives(993)
+false_negatives(0)  true_negatives(7)
+
+Valid pairs: 1000 SuccessRatio(0.993)
+computation time (microseconds) for succesfull matchings average: 34703 variance: 1.85355e+07 std dev: 4305.28
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 21000 variance: 9.61912e+06 std dev: 3101.47
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0299209,0.00157878) variance(0.000139757,2.62913e-06) std dev(0.0118219,0.00162146)
+
+
+Algorithm: glasm_gradient
+successes(1000)  failures(0)
+false_positives(0)  true_positives(1000)
+false_negatives(0)  true_negatives(0)
+
+Valid pairs: 1000 SuccessRatio(1)
+computation time (microseconds) for succesfull matchings average: 34238.7 variance: 1.99434e+07 std dev: 4465.81
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 0 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0132544,0.00107481) variance(9.85209e-05,2.23638e-06) std dev(0.00992577,0.00149545)
+
+
+Algorithm: polarga
+successes(1000)  failures(0)
+false_positives(0)  true_positives(1000)
+false_negatives(0)  true_negatives(0)
+
+Valid pairs: 1000 SuccessRatio(1)
+computation time (microseconds) for succesfull matchings average: 60574.5 variance: 5.6324e+07 std dev: 7504.93
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 0 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00209341,0.00328272) variance(6.69048e-05,4.54931e-05) std dev(0.00817953,0.00674486)
+
+150 2 10
+--------
+
+Algorithm: glasm_binary
+successes(968)  failures(32)
+false_positives(0)  true_positives(968)
+false_negatives(0)  true_negatives(32)
+
+Valid pairs: 1000 SuccessRatio(0.968)
+computation time (microseconds) for succesfull matchings average: 18305.4 variance: 4.43438e+06 std dev: 2105.8
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 15287.4 variance: 9.34836e+06 std dev: 3057.51
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0326218,0.00235168) variance(0.000225531,1.05804e-05) std dev(0.0150177,0.00325276)
+
+
+Algorithm: glasm_gradient
+successes(1000)  failures(0)
+false_positives(0)  true_positives(1000)
+false_negatives(0)  true_negatives(0)
+
+Valid pairs: 1000 SuccessRatio(1)
+computation time (microseconds) for succesfull matchings average: 18118.6 variance: 4.84188e+06 std dev: 2200.43
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 0 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0287555,0.0027356) variance(0.000246922,9.62299e-06) std dev(0.0157137,0.00310209)
+
+
+Algorithm: polarga
+successes(996)  failures(4)
+false_positives(0)  true_positives(996)
+false_negatives(0)  true_negatives(4)
+
+Valid pairs: 1000 SuccessRatio(0.996)
+computation time (microseconds) for succesfull matchings average: 31038.8 variance: 1.50633e+07 std dev: 3881.15
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 34028.2 variance: 340143 std dev: 583.218
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00560534,0.00450953) variance(0.000197319,3.4093e-05) std dev(0.014047,0.00583892)
+
+
+
+120 1 12
+--------
+
+
+Algorithm: glasm_binary
+successes(871)  failures(129)
+false_positives(0)  true_positives(871)
+false_negatives(0)  true_negatives(129)
+
+Valid pairs: 1000 SuccessRatio(0.871)
+computation time (microseconds) for succesfull matchings average: 9228.89 variance: 1.15002e+06 std dev: 1072.39
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 8314.39 variance: 2.64693e+06 std dev: 1626.94
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0375383,0.00406478) variance(0.000368914,3.61072e-05) std dev(0.0192071,0.00600892)
+
+
+Algorithm: glasm_gradient
+successes(985)  failures(15)
+false_positives(0)  true_positives(985)
+false_negatives(0)  true_negatives(15)
+
+Valid pairs: 1000 SuccessRatio(0.985)
+computation time (microseconds) for succesfull matchings average: 8619.97 variance: 1.08028e+06 std dev: 1039.36
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 8243.2 variance: 1.63337e+06 std dev: 1278.03
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0372467,0.00432941) variance(0.000420314,2.70855e-05) std dev(0.0205016,0.00520437)
+
+
+Algorithm: polarga
+successes(981)  failures(19)
+false_positives(0)  true_positives(981)
+false_negatives(0)  true_negatives(19)
+
+Valid pairs: 1000 SuccessRatio(0.981)
+computation time (microseconds) for succesfull matchings average: 14637.5 variance: 3.38285e+06 std dev: 1839.25
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 18848.9 variance: 1.1451e+08 std dev: 10700.9
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00897499,0.00643094) variance(0.000278398,0.000115709) std dev(0.0166852,0.0107568)
+
+
+80 10 1
+-------
+
+
+
+Algorithm: glasm_binary
+successes(759)  failures(241)
+false_positives(0)  true_positives(759)
+false_negatives(0)  true_negatives(241)
+
+Valid pairs: 1000 SuccessRatio(0.759)
+computation time (microseconds) for succesfull matchings average: 5342.74 variance: 419430 std dev: 647.634
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 4913.9 variance: 751155 std dev: 866.692
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0440474,0.00743614) variance(0.000516221,9.67503e-05) std dev(0.0227205,0.00983617)
+
+
+Algorithm: glasm_gradient
+successes(929)  failures(71)
+false_positives(0)  true_positives(929)
+false_negatives(0)  true_negatives(71)
+
+Valid pairs: 1000 SuccessRatio(0.929)
+computation time (microseconds) for succesfull matchings average: 5003.25 variance: 452767 std dev: 672.88
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 4789.94 variance: 541400 std dev: 735.799
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0447752,0.00585522) variance(0.00053983,5.49512e-05) std dev(0.0232342,0.00741291)
+
+
+Algorithm: polarga
+successes(959)  failures(41)
+false_positives(0)  true_positives(959)
+false_negatives(0)  true_negatives(41)
+
+Valid pairs: 1000 SuccessRatio(0.959)
+computation time (microseconds) for succesfull matchings average: 8306.44 variance: 1.09669e+06 std dev: 1047.23
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 9002.15 variance: 595931 std dev: 771.965
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0160285,0.00719377) variance(0.000394958,9.70071e-05) std dev(0.0198735,0.00984922)
+
+
+
+SMALL ERROR 0.2,0.2,0.174532925
+===============================
+
+80 1 10
+-------
+
+Algorithm: glasm_binary
+successes(980)  failures(20)
+false_positives(0)  true_positives(980)
+false_negatives(0)  true_negatives(20)
+
+Valid pairs: 1000 SuccessRatio(0.98)
+computation time (microseconds) for succesfull matchings average: 4764.49 variance: 394085 std dev: 627.762
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 3872.75 variance: 1.14963e+06 std dev: 1072.21
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0310257,0.00208566) variance(0.000174704,6.03615e-06) std dev(0.0132176,0.00245686)
+
+
+Algorithm: glasm_gradient
+successes(1000)  failures(0)
+false_positives(0)  true_positives(1000)
+false_negatives(0)  true_negatives(0)
+
+Valid pairs: 1000 SuccessRatio(1)
+computation time (microseconds) for succesfull matchings average: 4563.56 variance: 350125 std dev: 591.714
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 0 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0259818,0.00244653) variance(0.000177612,5.39826e-06) std dev(0.0133271,0.00232341)
+
+
+Algorithm: polarga
+successes(1000)  failures(0)
+false_positives(0)  true_positives(1000)
+false_negatives(0)  true_negatives(0)
+
+Valid pairs: 1000 SuccessRatio(1)
+computation time (microseconds) for succesfull matchings average: 8302.75 variance: 1.06929e+06 std dev: 1034.06
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 0 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00476267,0.00550256) variance(8.79963e-05,6.49854e-05) std dev(0.00938063,0.00806135)
+
+
+50 1 10
+-------
+
+Algorithm: glasm_binary
+successes(949)  failures(51)
+false_positives(0)  true_positives(949)
+false_negatives(0)  true_negatives(51)
+
+Valid pairs: 1000 SuccessRatio(0.949)
+computation time (microseconds) for succesfull matchings average: 3035.62 variance: 126537 std dev: 355.721
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 2458.22 variance: 331014 std dev: 575.338
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.035404,0.00343938) variance(0.000313599,1.86327e-05) std dev(0.0177087,0.00431656)
+
+
+Algorithm: glasm_gradient
+successes(999)  failures(1)
+false_positives(0)  true_positives(999)
+false_negatives(0)  true_negatives(1)
+
+Valid pairs: 1000 SuccessRatio(0.999)
+computation time (microseconds) for succesfull matchings average: 2845.3 variance: 137970 std dev: 371.444
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 2985 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0318178,0.00333412) variance(0.000247587,1.03927e-05) std dev(0.0157349,0.00322377)
+
+
+Algorithm: polarga
+successes(999)  failures(1)
+false_positives(0)  true_positives(999)
+false_negatives(0)  true_negatives(1)
+
+Valid pairs: 1000 SuccessRatio(0.999)
+computation time (microseconds) for succesfull matchings average: 5209.52 variance: 408812 std dev: 639.384
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 5634 variance: 0 std dev: 0
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.00881054,0.00612227) variance(0.000193754,6.53095e-05) std dev(0.0139196,0.00808143)
+
+
+30 1 10
+-------
+
+Algorithm: glasm_binary
+successes(893)  failures(107)
+false_positives(0)  true_positives(893)
+false_negatives(0)  true_negatives(107)
+
+Valid pairs: 1000 SuccessRatio(0.893)
+computation time (microseconds) for succesfull matchings average: 1857.54 variance: 48351.3 std dev: 219.889
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 1687.03 variance: 92671.6 std dev: 304.42
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0389705,0.00482621) variance(0.000359818,4.12073e-05) std dev(0.0189689,0.00641929)
+
+
+Algorithm: glasm_gradient
+successes(991)  failures(9)
+false_positives(0)  true_positives(991)
+false_negatives(0)  true_negatives(9)
+
+Valid pairs: 1000 SuccessRatio(0.991)
+computation time (microseconds) for succesfull matchings average: 1714.83 variance: 57408.4 std dev: 239.601
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 1661.78 variance: 144809 std dev: 380.538
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0382565,0.0040373) variance(0.00037316,1.72135e-05) std dev(0.0193174,0.00414892)
+
+
+Algorithm: polarga
+successes(992)  failures(8)
+false_positives(0)  true_positives(992)
+false_negatives(0)  true_negatives(8)
+
+Valid pairs: 1000 SuccessRatio(0.992)
+computation time (microseconds) for succesfull matchings average: 3128.7 variance: 165853 std dev: 407.251
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 3391.88 variance: 34971.9 std dev: 187.008
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0137391,0.00702628) variance(0.000270383,5.48477e-05) std dev(0.0164433,0.00740592)
+
+
+20 1 8
+------
+
+
+
+Algorithm: glasm_binary
+successes(768)  failures(232)
+false_positives(0)  true_positives(768)
+false_negatives(0)  true_negatives(232)
+
+Valid pairs: 1000 SuccessRatio(0.768)
+computation time (microseconds) for succesfull matchings average: 1115.72 variance: 19697.9 std dev: 140.349
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 1057.77 variance: 40971.7 std dev: 202.415
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0457982,0.00837564) variance(0.000467139,9.68374e-05) std dev(0.0216134,0.0098406)
+
+
+Algorithm: glasm_gradient
+successes(934)  failures(66)
+false_positives(0)  true_positives(934)
+false_negatives(0)  true_negatives(66)
+
+Valid pairs: 1000 SuccessRatio(0.934)
+computation time (microseconds) for succesfull matchings average: 988.673 variance: 16530.6 std dev: 128.572
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 982.045 variance: 19915.7 std dev: 141.123
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0474508,0.00564029) variance(0.000522182,3.21265e-05) std dev(0.0228513,0.00566803)
+
+
+Algorithm: polarga
+successes(960)  failures(40)
+false_positives(0)  true_positives(960)
+false_negatives(0)  true_negatives(40)
+
+Valid pairs: 1000 SuccessRatio(0.96)
+computation time (microseconds) for succesfull matchings average: 1764.73 variance: 46707.1 std dev: 216.118
+number of iterations for succesfull matchings average: 0 variance: 0 std dev: 0
+computation time (microseconds) for failed matchings average: 1868.5 variance: 14822.4 std dev: 121.747
+number of iterations for failed matchings average: 0 variance: 0 std dev: 0
+accuracy (meters) average(0.0248345,0.00843547) variance(0.000457908,7.7773e-05) std dev(0.0213988,0.0088189)
+
