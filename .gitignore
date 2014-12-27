@@ -14,10 +14,7 @@ Debug/*
 Release/*
 
 # variable data
-images/*
-scans/*
-#experiments/*
-errvsiter.csv
+experiments/*
 
 # temporary files
 *.orig

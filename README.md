@@ -25,14 +25,12 @@ The code of the *mbicp* algorithm was available (Here you will find a patched ve
 
 The main program allows to batch test multiple scan matching algorithms from command line. The results are printed to screen and optionaly PNG images are produced.
 
-Read the QUICKSTART section for usage instructions.
-
-Example scans, both real and simulated are also provided.
+Example scans, both real and simulated are provided.
 
 For each algorithm example default configurations are provided in their respective .ini files.
 
 Implemented algorithms include GLASM and its variants, GCP, PolarGA, ICP, MBICP and hybrid variants which combine some genetic and ICP variants for further refinement of the solution.
-I implemented several other scan matching algorithms so their code may be added quickly as well if I return to the topic (e-mail me if interested).
+I implemented other scan matching algorithms in different projects so there is a possibility of adding them here to if I return to the topic.
 
 I am publishing this code in the hope that someone may find it useful. I never had the time to rewrite it properly and to clean it up. Maybe this was the reason why I didn't publish it years ago.
 All code used to compile and work a few years ago, but that may not be the case anymore.
