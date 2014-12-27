@@ -812,6 +812,11 @@ int main(int argc, char **argv)
 
 	read_simulation_parameters();
 
+	if (NumAlgorithms < 1)
+	{   std::cout<<"Could not read any algorithm in simulation parameters file" << std::endl;
+		return -1;
+	}
+
 	// set initial fake error
 	ex=maxFakeErrorX;	// it gets inverted when first add_fake_error is called in **_all_combinations variant
 	ey=maxFakeErrorY;
