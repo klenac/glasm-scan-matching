@@ -14,6 +14,7 @@ Contents
 5. Preparing for the experiments
 6. Running the tests
 7. Analysing the results
+8. Developing
 
 
 
@@ -232,6 +233,10 @@ The results are printed on standard output (console). The images will be created
 Once finished running your tests, comment and save the results, explain the experiment. Annotate the changeset / revision of the program used to perform them. Also save the configurations (*.ini) used, the scans, the results and (optional) images, and anything else necessary to reproduce the experiments.
 
 Now you can analyse the results.
+
+## Developing ##
+
+Git is used for revision control. When making changes to source code remember that some files and directories are ignored when committing. Look at .gitignore file. For example the experiments folder is ignored.
 
 
 

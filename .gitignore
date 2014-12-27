@@ -1,6 +1,9 @@
 # system
 .directory
 
+# text editor backup files
+*~
+
 # eclipse project settings
 *.project
 *.cproject
@@ -13,7 +16,7 @@ Release/*
 # variable data
 images/*
 scans/*
-experiments/*
+#experiments/*
 errvsiter.csv
 
 # temporary files
