@@ -13,8 +13,9 @@
 Debug/*
 Release/*
 
-# variable data
-experiments/*
+# experiments folder
+experiments/
+
 
 # temporary files
 *.orig
