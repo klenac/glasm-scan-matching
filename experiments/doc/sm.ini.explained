@@ -1,7 +1,7 @@
 # todo: using comments before the options explain all the possible options ...
 
 [general]
-map_filename           			= ./cfg/bitmaps/empty_1000x1000.png
+map_filename           			= experiments/current/bitmaps/empty_1000x1000.png
 map_size_x                      = 25
 map_size_y                      = 25
 scan_path						= /home/klenac/scans/
