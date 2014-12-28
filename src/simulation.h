@@ -24,7 +24,7 @@
 // global settings at preprocessor level
 //#define ERRvsITER
 
-//#undef DRAW_PNG    // to disable compiling code for drawing of img
-#define DRAW_PNG // to enable  compiling code for drawing of img
+#undef DRAW_PNG    // to disable compiling code for drawing of img
+//#define DRAW_PNG // to enable  compiling code for drawing of img
 
 #endif

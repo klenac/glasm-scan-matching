@@ -49,15 +49,16 @@ namespace HGLASM
 		//std::cout<<"step1 estimate: "<<mres.p.x<<", "<<mres.p.y<<", "<<mres.p.rot <<std::endl;
 
 #ifdef DRAW_PNG
-		drawing img1("images/hglasm_step1.png", 25, 25,-25/2.0,-25/2.0,"./cfg/bitmaps/empty_1000x1000.png");
-		img1.grid();
-		img1.setpointsize(6);
-		img1.setcolor(0,0,30000);
-		img1.readings(sr,sr.pos);
-		img1.setpointsize(4);
-		img1.setcolor(0,0,50000);
-		img1.readings(sn,mres.p);
-		img1.write();
+//		drawing img1("images/hglasm_step1.png", 25, 25,-25/2.0,-25/2.0,"./experiments/current/bitmaps/empty_1000x1000.png");
+//
+//		img1.grid();
+//		img1.setpointsize(6);
+//		img1.setcolor(0,0,30000);
+//		img1.readings(sr,sr.pos);
+//		img1.setpointsize(4);
+//		img1.setcolor(0,0,50000);
+//		img1.readings(sn,mres.p);
+//		img1.write();
 #endif
 		readingsChangeRefFrame(sn.readings,mres.p,sn.pos);
 		position pga=mres.p; // we need to store this because step1 estimate will be combined with step 2 refined estimate
@@ -65,15 +66,15 @@ namespace HGLASM
 		mres=MBICP::match();
 
 #ifdef DRAW_PNG
-		drawing img3("images/hglasm_step2.png", 25, 25,-25/2.0,-25/2.0,"./cfg/bitmaps/empty_1000x1000.png");
-		img3.grid();
-		img3.setpointsize(6);
-		img3.setcolor(0,0,30000);
-		img3.readings(sr,sr.pos);
-		img3.setpointsize(4);
-		img3.setcolor(0,0,50000);
-		img3.readings(sn,mres.p);
-		img3.write();
+//		drawing img3("images/hglasm_step2.png", 25, 25,-25/2.0,-25/2.0,"./experiments/current/bitmaps/empty_1000x1000.png");
+//		img3.grid();
+//		img3.setpointsize(6);
+//		img3.setcolor(0,0,30000);
+//		img3.readings(sr,sr.pos);
+//		img3.setpointsize(4);
+//		img3.setcolor(0,0,50000);
+//		img3.readings(sn,mres.p);
+//		img3.write();
 #endif
 		mres.p.x=mres.p.x+pga.x;
 		mres.p.y=mres.p.y+pga.y;

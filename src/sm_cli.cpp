@@ -1013,7 +1013,7 @@ int main(int argc, char **argv)
 
 #ifdef ERRvsITER
 	// write number of iterations against IPE in file for later drawing/analysis
-	const char *filename = "errvsiter.csv";
+	const char *filename = "experiments/current/errvsiter.csv";
 	FILE *myff;
 	if ((myff = fopen(filename, "w")) == NULL)
 	{   std::cout<<"write iter: Error opening file"<< std::endl;
