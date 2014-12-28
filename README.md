@@ -48,8 +48,7 @@ src/ - source code. The main program is sm_cli.cpp. Files with "_aux" are wrappe
 
 ## Setting up a development environment with Eclipse ##
 
-Quick description
-^^^^^^^^^^^^^^^^^
+### Quick description ###
 
 Install Eclipse-cdt, ecc...
 Install required libraries (png, boost_program_options, pngwriter, freetype,...).
@@ -57,8 +56,7 @@ Create new project in eclipse (you will need to add required libraries and paths
 Build and run (you may want to configure the Run configurations in eclipse for that)
 
 
-Detailed description
-^^^^^^^^^^^^^^^^^^^^
+### Detailed description ###
 
 As example we will install everything starting from a clean fresh Ubuntu 14.04.1 virtual machine. After the installation open the terminal window (Ctrl+Alt+T).
 
@@ -135,10 +133,9 @@ Once built you can also launch the program from command line outside elipse.
 ## Preparing for the experiments ##
 
 
-Type of experiments
--------------------
+### Type of experiments ###
 
-#TODO: describe in detail different types of experiments
+TODO: describe in detail different types of experiments
 
 ref frame <=> global pose from which scan readings were made (more precisely position of sensors' local ref frame origin)
 
@@ -159,8 +156,7 @@ possible outputs:
 
 
 
-Preparation (short version)
----------------------------
+### Preparation (short version) ###
 
 0. make sure the scans are where you expect them to be
 1. set up all the options in ./experiments/current/sm.ini
@@ -169,27 +165,24 @@ Preparation (short version)
 
 Observe the output on stdout (Console if run from eclipse) and look for images in ./images folder.
 
-Preparation (detailed version)
-------------------------------
+### Preparation (detailed version) ###
 
 Typical steps for a new set of tests are as follows.
 
-Preliminaries
-^^^^^^^^^^^^^
+#### Preliminaries ####
+
 
 If the ./experiments/current folder is not empty, make it empty. Just copy, backup, archive or delete contents already present there.
 
 If the ./images folder is not empty, make it empty. It may contain images from previous experiments.
 
-Prepare the scans
-^^^^^^^^^^^^^^^^^
+#### Prepare the scans ####
 
 Scans may be in one of the supported formats (look the examples or the source code for supported formats). In the basic format scan.pos (x,y,z) holds the true position from which the scan was taken (ground truth) while scan readings hold the readings sorted with increasing angle. The ground truth position is necessary for some types of experiments, but not for all.
 
 Put them in their folder (name it as you like, as long as the you set the path in sm.ini correctly), typically in ./current/scans
 
-Configure the simulation (sm.ini)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+#### Configure the simulation (sm.ini) ####
 
 When launched the program reads all the configurations from the 
 
@@ -204,15 +197,13 @@ For an explanation of various options of each configuration file refer to ./expe
 ./experiments/doc/sm.ini.explained
 
 
-Configure the algorithms
-^^^^^^^^^^^^^^^^^^^^^^^^
+#### Configure the algorithms ####
 
 For each chosen algorithm set further options in his *.ini file (filename is set in sm.ini).
 
 Refer to documentation in ./experiments/doc/ folder or look in the source code on how to set it up.
 
-Drawing
-^^^^^^^
+#### Drawing ####
 
 To enable the creation of png images in various parts of the project (ie simulation wide) enable DRAW_PNG in "simulation.h" this way we avoid compiling and linking drawing code when DRAW_PNG is not enabled.
 
