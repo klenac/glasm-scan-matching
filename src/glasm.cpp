@@ -731,12 +731,14 @@ void drawfun(int run, int gen, int popsize, struct individual *newpop, struct be
 	if (draw_generations)
 	{   if (bestfit->chrom!=prevChrom)
 		{   chromosome2pos(prevChrom);
-		img.setcolor(60000,10000,60000);
-		img.readings(ScanNew, ScanNew.pos);
-		prevChrom=bestfit->chrom;
+			img.setcolor(60000,10000,60000);
+			//img.setpointsize(2);
+			img.readings(ScanNew, ScanNew.pos);
+			prevChrom=bestfit->chrom;
 		}
 		chromosome2pos(bestfit->chrom);
 		img.setcolor(60000,0,20000);
+		img.setpointsize(2);
 		img.readings(ScanNew, ScanNew.pos);
 		img.write();
 	} // draw_generations
