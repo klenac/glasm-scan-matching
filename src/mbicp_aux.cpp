@@ -175,8 +175,14 @@ Init_MbICP_ScanMatching(
 		{   std::cout<<"read_mbicp_associations: Error opening file "<<filename<< std::endl;
 			return;
 		}
+		img.setpointsize(2);
 		while (fscanf(in,"%f,%f,%f,%f",&x1,&y1,&x2,&y2)==4)
-		{   img.line(x1,y1,x2,y2);
+		{   img.setcolor(0,0,500);
+			img.line(x1,y1,x2,y2);
+			img.setcolor(0,0,50000);
+			img.point(x1,y1);
+			img.setcolor(0,50000,0);
+			img.point(x2,y2);
 		}
 		if (fclose(in) !=  0)
 		{   std::cout<<"read_mbicp_associations: Error closing file"<< std::endl;
@@ -190,9 +196,9 @@ Init_MbICP_ScanMatching(
 			perror("Error");
 		}
 
-		/* todo: to draw scans of mbicp during iterations we should first export ptosNewRef in EStep() in MbICP.c in every iteration
-		 *
+		// todo: to draw scans of mbicp during iterations we should first export ptosNewRef in EStep() in MbICP.c in every iteration
 
+/*
 		// draw reference scan
 		snprintf(filename,FILENAME_SIZE,"images/msc1_%d.tmp",numIteration);
 		if ((in = fopen(filename, "r")) == NULL)
@@ -216,29 +222,32 @@ Init_MbICP_ScanMatching(
 			printf("Unable to delete the file\n");
 			perror("Error");
 		}
+*/
 
 		// draw new scan
 		snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",numIteration);
+		//snprintf(filename,FILENAME_SIZE,"images/msc2_1.tmp");
 		if ((in = fopen(filename, "r")) == NULL)
 		{   std::cout<<"read_mbicp_scan2: Error opening file"<< std::endl;
 		}
 		img.setcolor(0,30000,0);
 		img.setpointsize(2);
+		std::cout<<"reading new scan for drawing from file: "<< filename << std::endl;
 		while (fscanf(in,"%f,%f",&x1,&y1)==2)
 		{   img.point(x1,y1);
-			std::cout<<"drawingpointscan2: "<< x1 << " " << y1 << std::endl;
+			//std::cout<<"drawingpointscan2: "<< x1 << " " << y1 << std::endl;
 		}
 		if (fclose(in) !=  0)
 		{   std::cout<<"read_mbicp_scan2: Error closing file"<< std::endl;
 		}
-		if( (status = remove(filename)) == 0 )
-		{	// printf("%s file deleted successfully.\n",filename);
-		}
-		else
-		{	printf("Unable to delete the file\n");
-			perror("Error");
-		}
-		*/
+		//if( (status = remove(filename)) == 0 )
+	//	{	// printf("%s file deleted successfully.\n",filename);
+		//}
+		//else
+	//	{	printf("Unable to delete the file\n");
+		//	perror("Error");
+		//}
+
 
 		// close image
 		img.write();

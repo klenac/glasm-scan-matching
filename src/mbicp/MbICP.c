@@ -176,25 +176,33 @@ int write_associations(int numIteration)
 	return 1;
 }
 
-/*
+
 int write_scans(int numIteration){
-const int FILENAME_SIZE = 19;
-char filename[FILENAME_SIZE];
-snprintf(filename,FILENAME_SIZE,"images/msc1_%d.tmp",numIteration);
-FILE *out;
-int i;
-if ((out = fopen(filename, "w")) == NULL)
-{	printf("write_scan1: Error opening file");
-	return 0;
-}
-//printf("writescans ptosNew.numPuntos=%d\n",ptosNew.numPuntos);
-for (i=0; i<ptosNew.numPuntos; i++) {
-	if (fprintf(out,"%f,%f\n",ptosNew.laserC[i].x,ptosNew.laserC[i].y)<2) {
-	printf("write_scan1: Error writing");
-	break;
+	const int FILENAME_SIZE = 19;
+	char filename[FILENAME_SIZE];
+	snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",numIteration);
+	FILE *out;
+	int i;
+	if ((out = fopen(filename, "w")) == NULL)
+	{	printf("write_scan1: Error opening file");
+		return 0;
 	}
-	//printf("writeok1 %d\n",i);
+	printf("writescans ptosNew.numPuntos=%d\n",ptosNew.numPuntos);
+
+	for (i=0; i<ptosNew.numPuntos; i++) {
+		if (fprintf(out,"%f,%f\n",ptosNew.laserC[i].x,ptosNew.laserC[i].y)<2) {
+			printf("write_scan1: Error writing");
+			break;
+		}
+		//printf("writeok1 %d\n",i);
+	}
+
+	if (fclose(out) !=  0)
+	{  printf("write_scan new: Error closing file");
+	}
 }
+	/*
+
 if (fclose(out) !=  0)
 {  printf("write_scan1: Error closing file");
 }
@@ -208,7 +216,7 @@ for (i=0; i<ptosRef.numPuntos; i++) {
 	printf("write_scan2: Error writing");
 	break;
 	}
-	//printf("writeok2 %d\n",i);
+	printf("writeok2 %d\n",i);
 }
 if (fclose(out) !=  0)
 {  printf("write_scan2: Error closing file");
@@ -314,6 +322,7 @@ int MbICPmatcher(Tpfp *laserK, Tpfp *laserK1,
 
 
 
+
 		*numiter=numIteration;
 
 		if (resMStep==1)
@@ -363,6 +372,7 @@ static int EStep()
 
 	// Transform the points according to the current pose estimation
 
+
 	ptosNewRef.numPuntos=0;
 	for (i=0; i<ptosNew.numPuntos; i++){
 		transfor_directa_p ( ptosNew.laserC[i].x, ptosNew.laserC[i].y,
@@ -370,6 +380,38 @@ static int EStep()
 		car2pol(&ptosNewRef.laserC[ptosNewRef.numPuntos],&ptosNewRef.laserP[ptosNewRef.numPuntos]);
 		ptosNewRef.numPuntos++;
 	}
+
+#ifdef DRAW_PNG
+	static num_iteration=0;
+	if (draw_iterations)
+	{	// write associations and scans to disk so an external program can visualize them
+
+		//write_associations(numIteration);
+		const int FILENAME_SIZE = 19;
+		char filename[FILENAME_SIZE];
+		snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",num_iteration++);
+		FILE *out;
+		int i;
+		if ((out = fopen(filename, "w")) == NULL)
+		{	printf("write_scan1: Error opening file");
+			return 0;
+		}
+		printf("writescans ptosNewRef.numPuntos=%d\n",ptosNewRef.numPuntos);
+
+		for (i=0; i<ptosNewRef.numPuntos; i++) {
+			if (fprintf(out,"%f,%f\n",ptosNewRef.laserC[i].x,ptosNewRef.laserC[i].y)<2) {
+				printf("write_scan1: Error writing");
+				break;
+			}
+		}
+
+		if (fclose(out) !=  0)
+		{  printf("write_scan new: Error closing file");
+		}
+
+	}
+#endif
+
 
 	// ----
 	/* Projection Filter */
