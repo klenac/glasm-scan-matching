@@ -74,6 +74,7 @@ TSMparams params;
 // Original points to be aligned
 Tscan ptosRef;
 Tscan ptosNew;
+Tscan ptosNewRef;
 
 // Structure of the associations before filtering
 TAsoc cp_associations[MAXLASERPOINTS];
@@ -178,52 +179,49 @@ int write_associations(int numIteration)
 
 
 int write_scans(int numIteration){
-	const int FILENAME_SIZE = 19;
+	const int FILENAME_SIZE = 28;
 	char filename[FILENAME_SIZE];
-	snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",numIteration);
 	FILE *out;
 	int i;
+
+	// new scan
+	snprintf(filename,FILENAME_SIZE,"images/mbicp_newscan_%d.tmp",numIteration);
 	if ((out = fopen(filename, "w")) == NULL)
-	{	printf("write_scan1: Error opening file");
+	{	printf("%s: Error opening file",filename);
 		return 0;
 	}
-	printf("writescans ptosNew.numPuntos=%d\n",ptosNew.numPuntos);
-
-	for (i=0; i<ptosNew.numPuntos; i++) {
-		if (fprintf(out,"%f,%f\n",ptosNew.laserC[i].x,ptosNew.laserC[i].y)<2) {
-			printf("write_scan1: Error writing");
+	for (i=0; i<ptosNewRef.numPuntos; i++) {
+		if (fprintf(out,"%f,%f\n",ptosNewRef.laserC[i].x,ptosNewRef.laserC[i].y)<2) {
+			printf("write_scan %s: Error writing", filename);
 			break;
 		}
-		//printf("writeok1 %d\n",i);
 	}
-
 	if (fclose(out) !=  0)
-	{  printf("write_scan new: Error closing file");
+	{	printf("write_scan $s: Error closing file", filename);
+		return 0;
 	}
-}
-	/*
 
-if (fclose(out) !=  0)
-{  printf("write_scan1: Error closing file");
-}
-snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",numIteration);
-if ((out = fopen(filename, "w")) == NULL)
-{	printf("write_scan2: Error opening file");
-	return 0;
-}
-for (i=0; i<ptosRef.numPuntos; i++) {
-	if (fprintf(out,"%f,%f\n",ptosRef.laserC[i].x,ptosRef.laserC[i].y)<2) {
-	printf("write_scan2: Error writing");
-	break;
+
+	// ref scan
+	snprintf(filename,FILENAME_SIZE,"images/mbicp_refscan_%d.tmp",numIteration);
+	if ((out = fopen(filename, "w")) == NULL)
+	{	printf("%s: Error opening file",filename);
+		return 0;
 	}
-	printf("writeok2 %d\n",i);
+	for (i=0; i<ptosRef.numPuntos; i++) {
+		if (fprintf(out,"%f,%f\n",ptosRef.laserC[i].x,ptosRef.laserC[i].y)<2) {
+			printf("write_scan %s: Error writing", filename);
+			break;
+		}
+	}
+	if (fclose(out) !=  0)
+	{   printf("write_scan $s: Error closing file", filename);
+		return 0;
+	}
+
+	return 1;
 }
-if (fclose(out) !=  0)
-{  printf("write_scan2: Error closing file");
-}
-return 1;
-}
-*/
+
 
 #endif
 
@@ -308,14 +306,15 @@ int MbICPmatcher(Tpfp *laserK, Tpfp *laserK1,
 		return -1;
 
 
-	#ifdef DRAW_PNG
-		if (draw_iterations)
-		{	// write associations and scans to disk so an external program can visualize them
+#ifdef DRAW_PNG
+	if (draw_iterations)
+	{	// write associations and scans to disk so an external program can visualize them
 
-			write_associations(numIteration);
-			//write_scans(numIteration);
-		}
-	#endif
+		write_associations(numIteration);
+		write_scans(numIteration);
+	}
+#endif
+
 
 		// Minize and compute the solution
 		resMStep=MStep(solution);
@@ -354,7 +353,7 @@ static int EStep()
 	int cnt;
 	int i,J;
 
-	static Tscan ptosNewRef;
+
 	static int indexPtosNewRef[MAXLASERPOINTS];
 
 	int L,R,Io;
@@ -381,36 +380,16 @@ static int EStep()
 		ptosNewRef.numPuntos++;
 	}
 
-#ifdef DRAW_PNG
-	static num_iteration=0;
-	if (draw_iterations)
-	{	// write associations and scans to disk so an external program can visualize them
-
-		//write_associations(numIteration);
-		const int FILENAME_SIZE = 19;
-		char filename[FILENAME_SIZE];
-		snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",num_iteration++);
-		FILE *out;
-		int i;
-		if ((out = fopen(filename, "w")) == NULL)
-		{	printf("write_scan1: Error opening file");
-			return 0;
-		}
-		printf("writescans ptosNewRef.numPuntos=%d\n",ptosNewRef.numPuntos);
-
-		for (i=0; i<ptosNewRef.numPuntos; i++) {
-			if (fprintf(out,"%f,%f\n",ptosNewRef.laserC[i].x,ptosNewRef.laserC[i].y)<2) {
-				printf("write_scan1: Error writing");
-				break;
-			}
-		}
-
-		if (fclose(out) !=  0)
-		{  printf("write_scan new: Error closing file");
-		}
-
-	}
-#endif
+//#ifdef DRAW_PNG
+//	static num_iteration=0;
+//	if (draw_iterations)
+//	{	// write associations and scans to disk so an external program can visualize them
+//
+//
+//		write_scans(num_iteration++);
+//
+//	}
+//#endif
 
 
 	// ----

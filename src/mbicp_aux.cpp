@@ -161,7 +161,7 @@ Init_MbICP_ScanMatching(
 #ifdef DRAW_PNG
 	// drawing the matching process
 	void draw_mbicp_associations(int numIteration)
-	{   const int FILENAME_SIZE = 19;
+	{   const int FILENAME_SIZE = 28;
 		char filename[FILENAME_SIZE]="images/mite_50.tmp";
 		snprintf(filename,FILENAME_SIZE,"images/mite_%02d.png",numIteration);
 		drawing img(filename,map_size_x,map_size_y,-map_size_x/2.0,-map_size_y/2.0,map_filename.c_str());
@@ -179,53 +179,53 @@ Init_MbICP_ScanMatching(
 		while (fscanf(in,"%f,%f,%f,%f",&x1,&y1,&x2,&y2)==4)
 		{   img.setcolor(0,0,500);
 			img.line(x1,y1,x2,y2);
-			img.setcolor(0,0,50000);
-			img.point(x1,y1);
-			img.setcolor(0,50000,0);
-			img.point(x2,y2);
+			//img.setcolor(0,0,50000);
+			//img.point(x1,y1);
+			//img.setcolor(0,50000,0);
+			//img.point(x2,y2);
 		}
 		if (fclose(in) !=  0)
 		{   std::cout<<"read_mbicp_associations: Error closing file"<< std::endl;
 		}
 		int status;
 		if( (status = remove(filename)) == 0 )
-		{	// printf("%s file deleted successfully.\n",filename);
+		{	printf("%s file deleted successfully.\n",filename);
 		}
 		else
 		{	printf("Unable to delete the file\n");
 			perror("Error");
 		}
 
-		// todo: to draw scans of mbicp during iterations we should first export ptosNewRef in EStep() in MbICP.c in every iteration
 
-/*
-		// draw reference scan
-		snprintf(filename,FILENAME_SIZE,"images/msc1_%d.tmp",numIteration);
+		// draw ref scan
+		snprintf(filename,FILENAME_SIZE,"images/mbicp_refscan_%d.tmp",numIteration);
 		if ((in = fopen(filename, "r")) == NULL)
-		{   std::cout<<"read_mbicp_scan1: Error openinlinuxg file"<< std::endl;
+		{   std::cout<<"read_mbicp_refscan: Error opening file"<< std::endl;
 		}
-		img.setpointsize(4);
-		img.setcolor(30000,0,0);
+		img.setcolor(0,0,30000);
+		img.setpointsize(2);
+		std::cout<<"reading ref scan for drawing from file: "<< filename << std::endl;
 		while (fscanf(in,"%f,%f",&x1,&y1)==2)
 		{   img.point(x1,y1);
-			std::cout<<"drawingpointscan1: "<< x1 << " " << y1 << std::endl;
+			//std::cout<<"drawingpointscan2: "<< x1 << " " << y1 << std::endl;
 		}
 		if (fclose(in) !=  0)
-		{   std::cout<<"read_mbicp_scan1: Error closing file"<< std::endl;
+		{   std::cout<<"read_mbicp_refscan: Error closing file"<< std::endl;
 		}
 		if( (status = remove(filename)) == 0 )
-		{
-			// printf("%s file deleted successfully.\n",filename);
+		{	printf("%s file deleted successfully.\n",filename);
 		}
 		else
-		{
-			printf("Unable to delete the file\n");
+		{	printf("Unable to delete the file\n");
 			perror("Error");
 		}
-*/
+
+
+
+
 
 		// draw new scan
-		snprintf(filename,FILENAME_SIZE,"images/msc2_%d.tmp",numIteration);
+		snprintf(filename,FILENAME_SIZE,"images/mbicp_newscan_%d.tmp",numIteration);
 		//snprintf(filename,FILENAME_SIZE,"images/msc2_1.tmp");
 		if ((in = fopen(filename, "r")) == NULL)
 		{   std::cout<<"read_mbicp_scan2: Error opening file"<< std::endl;
@@ -240,13 +240,13 @@ Init_MbICP_ScanMatching(
 		if (fclose(in) !=  0)
 		{   std::cout<<"read_mbicp_scan2: Error closing file"<< std::endl;
 		}
-		//if( (status = remove(filename)) == 0 )
-	//	{	// printf("%s file deleted successfully.\n",filename);
-		//}
-		//else
-	//	{	printf("Unable to delete the file\n");
-		//	perror("Error");
-		//}
+		if( (status = remove(filename)) == 0 )
+		{	// printf("%s file deleted successfully.\n",filename);
+		}
+		else
+		{	printf("Unable to delete the file\n");
+			perror("Error");
+		}
 
 
 		// close image

@@ -864,8 +864,7 @@ int main(int argc, char **argv)
 
 	unsigned NumValidPairs=0;
 	//for (unsigned pair=loop_start; pair<=loop_end; pair++)
-	// carefull: we are using NumValidPairs instead of pair to exit from loop!
-	for (unsigned pair=loop_start; NumValidPairs<=loop_end; pair++)
+	for (unsigned pair=loop_start; pair<=loop_end; pair++)
 	{   /* main testing loop:
 		 * 1) we first read one scan pair from disk/file and store it ts1 (ref scan) and ts2 (new scan)
 		 * The scan.pos typically contains the true position (ground truth)
